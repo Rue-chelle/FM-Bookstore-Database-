@@ -438,3 +438,21 @@ INSERT INTO customer (first_name,last_name,email,phone,registered_at) VALUES
 ("Pure","Salim","salim@gmail.com",9874663738,"2022-05-19 07:17"),
 ("Tinashe","Chipembere","tina@gmail.com",9884663738,"2021-05-09 08:18"),
 ("Mirah","Kaguvi","kags@gmail.com",2884663738,"2021-09-12 09:00");
+
+-- Inserting sample data for city table
+
+INSERT INTO country (country_name,iso_code) VALUES
+('Germany',33-01),
+('Zimbabwe',716),
+('South Africa',710),
+('Zambia',894),
+('Ghana',288),
+('Nigeria',566),
+('Australia',036),
+('Kenya',404),
+('Lesotho',426),
+('Ethiopia',231),
+('Namibia',516),
+('Egypt',818),
+('Niger',562),
+('USA',840);
