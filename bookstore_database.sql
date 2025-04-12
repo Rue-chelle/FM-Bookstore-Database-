@@ -404,3 +404,37 @@ INSERT INTO book_author (book_id, author_id) VALUES
 (67, 60),  -- Pedro Páramo - Juan Rulfo
 (68, 61),  -- Madame Bovary - Gustave Flaubert
 (69, 62);  -- All Quiet on the Western Front - Erich Maria Remarque
+
+
+-- Inserting sample data for customer table
+
+INSERT INTO customer (first_name,last_name,email,phone,registered_at) VALUES
+("John","Smith","jon@gmail.com",234663738,"2025-04-12 13:14"),
+( "Blake",'Joe','joe@gmail.com',236673788,'2013-02-12 21:12'),
+( "Tim",'Brian','tim@gmail.com',+4366773788,'2023-02-11 21:32'),
+( "Dwan",'Johnson ','dwan44@gmail com',+1236773788,'2001-02-11 11:32'),
+("John","Ridder","jack02@gmail.com",6535354647983,"2025-04-12 13:14"),
+("Mathis ","Nunes ","nunvea89@gamil.com ",+234663738,"2025-04-12 13:14"),
+("Leon ","Balogun","leon909@yhoo.com",2316531238653,"2012-01-13 05:29"),
+("Lono",'Messi',"lino789@gmai.com",253253458369,"2025-04-12 11:14"),
+("Cristina ","Princess ","Cristina890@gmail.com",1124528769875,"2025-04-12 12:23"),
+("Ansu","Fati","fati519@gmail.com",1528563698569,"2025-05-16 13:14"),
+("Jack ","Girlish ","jac@gmail.com",2355845685968,"2012-04-11 10:14"),
+("Paul ","Walker ","paul510@gmail.com",1234567893,"2025-04-12 13:14"),
+("James ","Bound ","James2426@gmail.com",2315963652365,"2020-10-12 09:00"),
+("Ayra","Star","star898@gmail.com",2563642539586,"2015-12-01 13:19"),
+("David ","Oladapo","davil001@gamil.com",2652833952536,"2025-04-12 11:11"),
+("Mosludeem","Job","job2662@yhoo.com",364785945364,"2025-05-12 13:24"),
+("Peter","Bright ","peter251@gmail.com",57234663738,"2001-07-09 15:11"),
+("Cristian","Rolando ","cru778@gmail.com",356424976455,"2023-03-30 11:30"),
+("Luise ","Suarez ","luise682@gmail.com",73234663738,"2024-09-25 13:25"),
+("Mike ","obi ","jmk67@gmail.com",23434663738,"2024-11-12 07:29"),
+("Peter ","Obi","obi@gmail.com",23434663738,"2024-04-11 13:00"),
+("Jagaban","Oloshi ","atiku671@gmail.com",23454663738,"2023-02-12 10:34"),
+("Atiku","Ole ","oloshi57@gmail.com",2364663738,"2022-03-01 12:19"),
+("Travo ","Chaloba ","travo118@gmail.com",2467663738,"2021-03-01 11:12"),
+("Simba","Charamba","Sims@gmail.com",172663738,"2021-03-16 09:13"),
+("Lisa","Moyo","Lisa@gmail.com",4444663738,"2022-02-17 08:15"),
+("Pure","Salim","salim@gmail.com",9874663738,"2022-05-19 07:17"),
+("Tinashe","Chipembere","tina@gmail.com",9884663738,"2021-05-09 08:18"),
+("Mirah","Kaguvi","kags@gmail.com",2884663738,"2021-09-12 09:00");
