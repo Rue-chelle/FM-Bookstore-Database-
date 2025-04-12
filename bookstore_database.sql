@@ -164,17 +164,17 @@ CREATE TABLE order_history (
       REFERENCES order_status(status_id)
 );
 
-/* Inserting sample data */
-USE bookstoredb;
 
--- inserting sample data for book language table
+/* Inserting datas */
+
+-- inserting data for book language table
 INSERT INTO book_language (language_id, language_name, language_code) VALUES
 (1, 'English', 'en'),
 (2, 'Spanish', 'es'),
 (3, 'French', 'fr'),
 (4, 'German', 'de');
 
--- inserting sample data for publishers table
+-- inserting data for publishers table
 INSERT INTO publisher (publisher_id, publisher_name, contact_email, website) VALUES
 (1, 'Dream Work', 'guoi@gmail.com', 'www.dreamwork.com'),
 (2, 'Penguin Books', 'contact@penguin.com', 'www.penguin.com'),
@@ -188,7 +188,7 @@ INSERT INTO publisher (publisher_id, publisher_name, contact_email, website) VAL
 (10, 'Biblio Publishing', 'Info@BiblioPublishing.com', 'bibliopublishing.com'),
 (11, 'Little, Brown and Co.', 'publicity@littlebrown.com', 'www.hachette.com/en/publisher/little-brown-and-company');
 
--- inserting sample data for authors table
+-- inserting data for authors table
 INSERT INTO author (first_name, last_name, bio, birth_date) VALUES
 ('John', 'Smith', 'A novelist', '1980-04-23'),
 ('Harper', 'Lee', 'American Novelist', '1926-04-28'),
@@ -253,7 +253,7 @@ INSERT INTO author (first_name, last_name, bio, birth_date) VALUES
 ('Gustave', 'Flaubert', 'Novelist', '1821-12-12'),
 ('Erich Maria', 'Remarque', 'Novelist', '1898-06-22');
 
--- code for inserting missing authors
+-- Inserting code for complete authors
 INSERT INTO author (author_id, first_name, last_name, bio) VALUES
 (63, 'Leo', 'Tolstoy', 'Russian novelist'),
 (64, 'Fyodor', 'Dostoevsky', 'Russian novelist'),
@@ -261,7 +261,7 @@ INSERT INTO author (author_id, first_name, last_name, bio) VALUES
 (66, 'Homer', '', 'Ancient Greek poet'),
 (67, 'S.E.', 'Hinton', 'American novelist');
 
--- inserting sample data for books table
+-- inserting data for books table
 INSERT INTO book (book_id, title, isbn, publish_date, price, publisher_id, language_id, description) VALUES
 (1, 'The great adventure', '12455', '2020-05-15', 20.00, 2, 1, 'Adventure'),
 (2, 'To Kill a Mockingbird', '9780060935467', '1960-11-07', 18.00, 1, 1, 'Fiction thriller'),
@@ -333,7 +333,7 @@ INSERT INTO book (book_id, title, isbn, publish_date, price, publisher_id, langu
 (68, 'Madame Bovary', '9782070360383', '1856-12-12', 29.00, 4, 3, 'Drama'), 
 (69, 'All Quiet on the Western Front', '9783462028354', '1929-01-29', 27.00, 6, 4, 'Thriller');
 
--- inserting sample data for book-author joining table
+-- inserting data for book-author joining table
 INSERT INTO book_author (book_id, author_id) VALUES
 (1, 1),    -- The Great Adventure - John Smith
 (2, 2),    -- To Kill a Mockingbird - Harper Lee
@@ -406,8 +406,7 @@ INSERT INTO book_author (book_id, author_id) VALUES
 (69, 62);  -- All Quiet on the Western Front - Erich Maria Remarque
 
 
--- Inserting sample data for customer table
-
+-- Inserting data for customer table
 INSERT INTO customer (first_name,last_name,email,phone,registered_at) VALUES
 ("John","Smith","jon@gmail.com",234663738,"2025-04-12 13:14"),
 ( "Blake",'Joe','joe@gmail.com',236673788,'2013-02-12 21:12'),
@@ -437,10 +436,11 @@ INSERT INTO customer (first_name,last_name,email,phone,registered_at) VALUES
 ("Lisa","Moyo","Lisa@gmail.com",4444663738,"2022-02-17 08:15"),
 ("Pure","Salim","salim@gmail.com",9874663738,"2022-05-19 07:17"),
 ("Tinashe","Chipembere","tina@gmail.com",9884663738,"2021-05-09 08:18"),
-("Mirah","Kaguvi","kags@gmail.com",2884663738,"2021-09-12 09:00");
+("Mirah","Kaguvi","kags@gmail.com",2884663738,"2021-09-12 09:00"),
+(30,"Petty","Ndlovu","Pgirl@gmail.com",547349320324,"2020-08-11 08:00");
 
--- Inserting sample data for city table
 
+-- Inserting data for country table
 INSERT INTO country (country_name,iso_code) VALUES
 ('Germany',33-01),
 ('Zimbabwe',716),
@@ -457,8 +457,7 @@ INSERT INTO country (country_name,iso_code) VALUES
 ('Niger',562),
 ('USA',840);
 
--- Inserting sample data for address table
-
+-- Inserting data for address table
 INSERT INTO address( street,city, state_province,postal_code,country_id) VALUES
 ('opoo','Nill','Abuja',2434,6),
 ('Gills','Harare','Mashonaland',638,2),
@@ -488,4 +487,236 @@ INSERT INTO address( street,city, state_province,postal_code,country_id) VALUES
 ('Hiven','Dire Dawa','Dire Dawa chartered',245,10),
 ('Batare','Zinder','Mokuwa',546,13),
 ('Nearvile','Los Angeles','Califonia',224,14),
-('Ridgenel','San Francisco','Califonia',245,14);
+('Ridgenel','San Francisco','Califonia',245,14),
+(30,'Sandynel','San Francisco','Ojuaelgba',132,14);
+
+-- Inserting data for address status table
+INSERT INTO address_status(status_name) VALUES 
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current'),
+('Current');
+
+-- Inserting data for shipping method table
+INSERT INTO shipping_method(method_name, details, cost) VALUES 
+('Standard Shipping', NULL, 10),
+('Standard Shipping','Office Building',10),
+('Standard Shipping',NULL,10),
+('Express Shipping','Country Side',20),
+('Standard Shipping',NULL,10),
+('Standard Shipping',NULL,10),
+('Standard Shipping','Country Side',20),
+('Express Shipping','Office',20),
+('Standard Shipping',NULL,10),
+('Standard Shipping',NULL,10),
+('Standard Shipping',NULL,10),
+('Standard Shipping',NULL,10),
+('Standard Shipping',NULL,10),
+('Standard Shipping','Office',10),
+('Express Shipping',NULL,20),
+('Standard Shipping',NULL,10),
+('Express Shipping','Office',20),
+('Express Shipping','Church',20),
+('Express Shipping','Office',20),
+('Express Shipping', 'Country Side',20),
+('Standard Shipping','school',10),
+('Standard Shipping','School',10),
+('Standard Shipping',NULL,10),
+('Standard Shipping',NUll,10),
+('Standard Shipping','Office',10),
+('Standard Shipping','Church',10),
+('Standard Shipping',NULL,10),
+('Express Sshipping',NULL,20),
+('Express Sshipping',NULL,20),
+('Express Sshipping',NULL,20);
+
+--Inserting data for order status table
+INSERT INTO order_status(status_name) VALUES
+('Pending'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Pending'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Pending'),
+('Deliverd'),
+('Deliverd'),
+('Pending'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Pending'),
+('Pending'),
+('Deliverd'),
+('Pending'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Pending'),
+('Pending'),
+('Deliverd'),
+('Deliverd'),
+('Deliverd'),
+('Pending');
+
+-- Inserting data for customer order table
+INSERT INTO cust_order(customer_id, order_date, shipping_method_id, order_status_id,total_amount) VALUES 
+(1,'1999-02-13',1,1, 70),
+(2,'1998-05-13',2,2, 20),
+(3,'2000-02-02',3,3, 50),
+(4,'2001-02-14',4,4, 50),
+(5,'2000-05-02',5,5, 100),
+(6,'2000-02-03',6,6, 50),
+(7,'1999-09-19',7,7, 20),
+(8,'2002-08-17',8,8, 100),
+(9,'2001-04-14',9,9, 70),
+(10,'1998-04-26',10,10, 90),
+(11,'2002-07-02',11,11, 34),
+(12,'2001-03-04',12,12, 36),
+(13,'2002-06-19',13,13, 40),
+(14,'2001-06-26',14,14, 30),
+(15,'2000-09-30',15,15, 80),
+(16,'2001-08-21',16,16, 50),
+(17,'1999-04-20',17,17, 40),
+(18,'2001-03-12',18,18, 72),
+(19,'2000-04-15',19,19, 35),
+(20,'2001-06-16',20,20, 72),
+(21,'2000-04-15',21,21, 35),
+(22,'2001-06-16',22,22, 40),
+(23,'2000-02-15',23,23, 26),
+(24,'2002-01-28',24,24, 40),
+(25,'2000-01-25',25,25, 30),
+(26,'2001-06-22',26,26, 40),
+(27,'2001-07-30',27,27, 20),
+(28,'1998-08-14',28,28, 20),
+(29,'1999-08-16',29,29, 30),
+(30,'2002-02-10',30,30, 35);
+
+--Insterting data for order line table
+INSERT INTO order_line(order_id,book_id,quantity,unit_price) VALUES 
+(61,3,2,'30'),
+(62,6,1,'10'),
+(63,8,2,'20'),
+(64,67,3,'10'),
+(65,24,3,'30'),
+(66,33,2,'20'),
+(67,3,1,'10'),
+(68,54,4,'20'),
+(69,23,2,'30'),
+(70,2,4,'20'),
+(71,56,1,'24'),
+(72,3,1,'26'),
+(73,45,1,'30'),
+(74,12,2,'10'),
+(75,35,3,'20'),
+(76,52,2,'20'),
+(77,62,2,'10'),
+(78,44,2,'26'),
+(79,23,1,'15'),
+(80,9,1,'20'),
+(81,45,1,'16'),
+(82,3,1,'30'),
+(83,1,2,'20'),
+(84,16,3,'30'),
+(85,36,2,'10'),
+(86,23,4,'10'),
+(87,34,3,'20'),
+(88,45,1,'15'),
+(89,33,2,'10'),
+(90,9,3,'20');
+
+--Inserting data Oreder History table
+INSERT INTO order_history(order_id,status_id,changed_at,note) VALUES
+(61,1,NULL,NULL),
+(62,2,NULL,NULL),
+(63,3,NULL,NULL),
+(64,4,NULL,NULL),
+(65,5,NULL,NULL),
+(66,6,NULL,NULL),
+(67,7,NULL,NULL),
+(68,8,NULL,NULL),
+(69,9,NULL,NULL),
+(70,10,NULL,NULL),
+(71,11,NULL,NULL),
+(72,12,NULL,NULL),
+(73,13,NULL,NULL),
+(74,14,NULL,NULL),
+(75,15,NULL,NULL),
+(76,16,NULL,NULL),
+(77,17,NULL,NULL),
+(78,18,NULL,NULL),
+(79,19,NULL,NULL),
+(80,20,NULL,NULL),
+(81,21,NULL,NULL),
+(82,22,NULL,NULL),
+(83,23,NULL,NULL),
+(84,24,NULL,NULL),
+(85,25,NULL,NULL),
+(86,26,NULL,NULL),
+(87,27,NULL,NULL),
+(88,28,NULL,NULL),
+(89,29,NULL,NULL),
+(90,30,NULL,NULL);
+
+-- Inserting data customer address table
+INSERT INTO customer_address(customer_id,address_id,status_id,added_on) VALUES
+(1,1,1,NULL),
+(2,2,2,NULL),
+(3,3,3,NULL),
+(4,4,4,NULL),
+(5,5,5,NULL),
+(6,6,6,NULL),
+(7,7,7,NULL),
+(8,8,8,NULL),
+(9,9,9,NULL),
+(10,10,10,NULL),
+(11,11,11,NULL),
+(12,12,12,NULL),
+(13,13,13,NULL),
+(14,14,14,NULL),
+(15,15,15,NULL),
+(16,16,16,NULL),
+(17,17,17,NULL),
+(18,18,18,NULL),
+(19,19,19,NULL),
+(20,20,20,NULL),
+(21,21,21,NULL),
+(22,22,22,NULL),
+(23,23,23,NULL),
+(24,24,24,NULL),
+(25,25,25,NULL),
+(26,26,26,NULL),
+(27,27,27,NULL),
+(28,28,28,NULL),
+(29,29,29,NULL),
+(30,30,30,NULL);
