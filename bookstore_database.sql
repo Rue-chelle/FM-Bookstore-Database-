@@ -456,3 +456,36 @@ INSERT INTO country (country_name,iso_code) VALUES
 ('Egypt',818),
 ('Niger',562),
 ('USA',840);
+
+-- Inserting sample data for address table
+
+INSERT INTO address( street,city, state_province,postal_code,country_id) VALUES
+('opoo','Nill','Abuja',2434,6),
+('Gills','Harare','Mashonaland',638,2),
+('Slovo','Johannesburg','Gauteng',6342,3),
+('Tanie','Lusaka','Lusaka Province',34578,4),
+('Potrens','Durban','KwaZulu Natal',534,3),
+('Tries','Accra','Atlantic coast',6564,5),
+('Magert','Jos','Central',558,6),
+('Guwi','Bulawayo','Matebeleland',32278,2),
+('Chikani','kitwe','Copperland',9876,6),
+('Loues','Sydney','New South Wales',123,7),
+('Priceton','Nairobi','South Central',388,8),
+('Bokeng','Maseru','Caledon',38,9),
+('Tsaneu','Addis Ababa','Chaetered City',6382,10),
+('Footsport','Windhoek','Central province',29,11),
+('Chrisan','Bahir Dar','Amhara Region',2892,12),
+('Gosal','Kisumu','Kisumu County',01,13),
+('Zakino','Port Harcout','Riverstate',2048,12),
+('Betrams','Kensinton','Eastern Cape',274,3),
+('Doornfontein','CapeTown ','Western Cape',202,3),
+('Avondale','Harare','Mashonaland',991,2),
+('Avondale','Marondera','Midlands',111,2),
+('Ellis','Johannesburg','Gauteng',234,3),
+('Kingsland','Cairo','Cairo Governorate',3455,13),
+('Tresslon','Alexandria','Alexandria Governorate',3535,13),
+('Aloro','Mekelle','Tigray Region',223,10),
+('Hiven','Dire Dawa','Dire Dawa chartered',245,10),
+('Batare','Zinder','Mokuwa',546,13),
+('Nearvile','Los Angeles','Califonia',224,14),
+('Ridgenel','San Francisco','Califonia',245,14);
