@@ -220,7 +220,7 @@ GRANT 'bookstore_book_manager' TO 'book_manager'@'localhost';
 SET DEFAULT ROLE 'bookstore_book_manager' TO 'book_manager'@'localhost';
 
 -- (d) Customer Manager User
-CREATE USER 'customer_manager'@'localhost' IDENTIFIED BY 'Michelle your password';
+CREATE USER 'customer_manager'@'localhost' IDENTIFIED BY 'Fiona your password';
 GRANT 'bookstore_customer_manager' TO 'customer_manager'@'localhost';
 SET DEFAULT ROLE 'bookstore_customer_manager' TO 'customer_manager'@'localhost';
 
