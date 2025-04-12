@@ -164,6 +164,72 @@ CREATE TABLE order_history (
       REFERENCES order_status(status_id)
 );
 
+--------------------------------------------------
+-- 1. Create Roles and Grant Privileges
+--------------------------------------------------
+
+-- (a) Role: bookstore_admin (Full control)
+CREATE ROLE 'bookstore_admin';
+GRANT ALL PRIVILEGES ON bookstoredb.* TO 'bookstore_admin';
+
+-- (b) Role: bookstore_readonly (Read-only access)
+CREATE ROLE 'bookstore_readonly';
+GRANT SELECT ON bookstoredb.* TO 'bookstore_readonly';
+
+-- (c) Role: bookstore_book_manager (Manage books, authors, publishers, languages)
+CREATE ROLE 'bookstore_book_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.book TO 'bookstore_book_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.author TO 'bookstore_book_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.publisher TO 'bookstore_book_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.book_language TO 'bookstore_book_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.book_author TO 'bookstore_book_manager';
+
+-- (d) Role: bookstore_customer_manager (Manage customers, addresses, and related tables)
+CREATE ROLE 'bookstore_customer_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.customer TO 'bookstore_customer_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.address TO 'bookstore_customer_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.country TO 'bookstore_customer_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.address_status TO 'bookstore_customer_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.customer_address TO 'bookstore_customer_manager';
+
+-- (e) Role: bookstore_order_manager (Manage orders, order lines, order history, shipping and status)
+CREATE ROLE 'bookstore_order_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.cust_order TO 'bookstore_order_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.order_line TO 'bookstore_order_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.order_history TO 'bookstore_order_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.shipping_method TO 'bookstore_order_manager';
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.order_status TO 'bookstore_order_manager';
+
+--------------------------------------------------
+-- 2. Create Users and Assign Roles
+--------------------------------------------------
+
+-- (a) Admin User
+CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'Michelle yourpasword';
+GRANT 'bookstore_admin' TO 'admin_user'@'localhost';
+SET DEFAULT ROLE 'bookstore_admin' TO 'admin_user'@'localhost';
+
+-- (b) Read-only User
+CREATE USER 'readonly_user'@'localhost' IDENTIFIED BY 'Abiodun001';
+GRANT 'bookstore_readonly' TO 'readonly_user'@'localhost';
+SET DEFAULT ROLE 'bookstore_readonly' TO 'readonly_user'@'localhost';
+
+-- (c) Book Manager User
+CREATE USER 'book_manager'@'localhost' IDENTIFIED BY 'Fiona your password';
+GRANT 'bookstore_book_manager' TO 'book_manager'@'localhost';
+SET DEFAULT ROLE 'bookstore_book_manager' TO 'book_manager'@'localhost';
+
+-- (d) Customer Manager User
+CREATE USER 'customer_manager'@'localhost' IDENTIFIED BY 'Michelle your password';
+GRANT 'bookstore_customer_manager' TO 'customer_manager'@'localhost';
+SET DEFAULT ROLE 'bookstore_customer_manager' TO 'customer_manager'@'localhost';
+
+-- (e) Order Manager User
+CREATE USER 'order_manager'@'localhost' IDENTIFIED BY 'Abiodun001';
+GRANT 'bookstore_order_manager' TO 'order_manager'@'localhost';
+SET DEFAULT ROLE 'bookstore_order_manager' TO 'order_manager'@'localhost';
+
+
 
 /* Inserting datas */
 
