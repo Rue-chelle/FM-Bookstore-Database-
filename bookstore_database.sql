@@ -205,7 +205,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON bookstoredb.order_status TO 'bookstore_o
 --------------------------------------------------
 
 -- (a) Admin User
-CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'Michelle yourpasword';
+CREATE USER 'admin_user'@'localhost' IDENTIFIED BY '200301';
 GRANT 'bookstore_admin' TO 'admin_user'@'localhost';
 SET DEFAULT ROLE 'bookstore_admin' TO 'admin_user'@'localhost';
 
