@@ -1,7 +1,5 @@
 ## FM Bookstore Database README
 
-![Schema]()
-
 ## Overview
 
 The **Bookstore Database** is designed to support a full-featured online bookstore. It incorporates various aspects such as book inventory management, authorship, publishers, customer details, and the complete order management process including shipping and order history. The schema has been thoughtfully designed to handle many-to-many relationships (for example, books and authors) as well as one-to-many relationships (e.g., customers to addresses).
