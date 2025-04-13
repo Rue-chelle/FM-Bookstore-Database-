@@ -46,38 +46,38 @@ This database supports the following core functionalities:
 
 ### 1. Books and Related Entities
 
-- **`book_language`**Stores languages available for books with columns such as `language_id`, `language_name`, and `language_code`.
-- **`publisher`**Contains publisher information including `publisher_name`, `contact_email`, and `website`.
-- **`book`**Contains book information (title, ISBN, publish date, price, etc.). It includes foreign keys to:
+- **`book_language`** Stores languages available for books with columns such as `language_id`, `language_name`, and `language_code`.
+- **`publisher`** Contains publisher information including `publisher_name`, `contact_email`, and `website`.
+- **`book`** Contains book information (title, ISBN, publish date, price, etc.). It includes foreign keys to:
 
   - `publisher` (publisher_id)
   - `book_language` (language_id)
-- **`author`**Contains details about authors: first name, last name, biography, and birth date.
+- **`author`** Contains details about authors: first name, last name, biography, and birth date.
 - **`book_author`**
   A junction table to handle the many-to-many relationship between books and authors. Each record links a `book_id` to an `author_id`.
 
 ### 2. Customers and Addresses
 
-- **`country`**Manages country information with columns `country_id`, `country_name`, and an ISO code.
-- **`address`**Contains detailed address information such as street, city, state/province, postal code, and a foreign key to `country`.
-- **`address_status`**Tracks the status of an address (e.g., current, old).
-- **`customer`**Contains customer information (first name, last name, email, phone, and registration timestamp). The email column is unique.
+- **`country`** Manages country information with columns `country_id`, `country_name`, and an ISO code.
+- **`address`** Contains detailed address information such as street, city, state/province, postal code, and a foreign key to `country`.
+- **`address_status`** Tracks the status of an address (e.g., current, old).
+- **`customer`** Contains customer information (first name, last name, email, phone, and registration timestamp). The email column is unique.
 - **`customer_address`**
   Maps customers to their multiple addresses with a status field (reflecting whether it is current or old), along with a timestamp for when the address was added.
 
 ### 3. Orders, Shipping, and Order History
 
-- **`shipping_method`**Lists available shipping methods along with details and associated costs.
-- **`order_status`**Tracks status values for orders (such as pending, shipped, delivered).
-- **`cust_order`**Records customer orders including customer reference, order date, shipping method, order status, and total order amount. Includes foreign keys to `customer`, `shipping_method`, and `order_status`.
-- **`order_line`**Each record details a single book in an order: quantity and unit price are recorded. It includes foreign keys to `cust_order` and `book`.
+- **`shipping_method`** Lists available shipping methods along with details and associated costs.
+- **`order_status`** Tracks status values for orders (such as pending, shipped, delivered).
+- **`cust_order`** Records customer orders including customer reference, order date, shipping method, order status, and total order amount. Includes foreign keys to `customer`, `shipping_method`, and `order_status`.
+- **`order_line`** Each record details a single book in an order: quantity and unit price are recorded. It includes foreign keys to `cust_order` and `book`.
 - **`order_history`**
   Logs all changes to order statuses with a timestamp and optional note. It provides an audit trail for order status changes and references `cust_order` and `order_status` via foreign keys.
 
 ## Data Insertion Details
 
-- **Initial data load:**The script includes SQL INSERT statements to populate tables with sample languages, publishers, authors, books, customers, addresses, shipping methods, order statuses, orders, order line items, and order history.
-- **Join Tables:**The `book_author` and `customer_address` tables ensure that the many-to-many and one-to-many relationships are maintained properly.
+- **Initial data load:** The script includes SQL INSERT statements to populate tables with sample languages, publishers, authors, books, customers, addresses, shipping methods, order statuses, orders, order line items, and order history.
+- **Join Tables:** The `book_author` and `customer_address` tables ensure that the many-to-many and one-to-many relationships are maintained properly.
 - **Data Consistency:**
   Foreign key constraints are defined to enforce referential integrity across tables.
 
@@ -139,8 +139,8 @@ Here are some example queries to get you started:
 
 ## Additional Notes
 
-- **Constraint Enforcement:**The database uses foreign key constraints to ensure referential integrity. Make sure that insertions follow the proper sequence (e.g., insert into parent tables before child tables).
-- **Data Types:**The script utilizes appropriate MySQL data types such as `VARCHAR`, `TEXT`, `DATE`, `TIMESTAMP`, and `DECIMAL` to ensure that data is stored efficiently and accurately.
+- **Constraint Enforcement:** The database uses foreign key constraints to ensure referential integrity. Make sure that insertions follow the proper sequence (e.g., insert into parent tables before child tables).
+- **Data Types:** The script utilizes appropriate MySQL data types such as `VARCHAR`, `TEXT`, `DATE`, `TIMESTAMP`, and `DECIMAL` to ensure that data is stored efficiently and accurately.
 
 **Group Leader:** Michelle Rufaro Samuriwo
 **Collaborator:** Fiona Wangui Njuguna
