@@ -141,13 +141,12 @@ Here are some example queries to get you started:
 
 - **Constraint Enforcement:**The database uses foreign key constraints to ensure referential integrity. Make sure that insertions follow the proper sequence (e.g., insert into parent tables before child tables).
 - **Data Types:**The script utilizes appropriate MySQL data types such as `VARCHAR`, `TEXT`, `DATE`, `TIMESTAMP`, and `DECIMAL` to ensure that data is stored efficiently and accurately.
-- **Future Enhancements:**
-  Consider adding indices on frequently queried columns (like `isbn` for the `book` table or `email` for the `customer` table) to improve performance. Additional features such as stored procedures for order processing or triggers for automatic order history logging can further enhance the functionality of the database.
 
 **Group Leader:** Michelle Rufaro Samuriwo
 **Collaborator:** Fiona Wangui Njuguna
 **Collaborator:** Abiodun Moses Kajogbola
 
-## Diagram Source
 
-[Download the Draw.io Diagram File](./Book library.drawio)
+## Database Schema Diagram 
+
+![Schema Diagram](Images/schema.drawio.png)
