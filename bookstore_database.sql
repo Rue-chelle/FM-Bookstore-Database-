@@ -215,12 +215,12 @@ GRANT 'bookstore_readonly' TO 'readonly_user'@'localhost';
 SET DEFAULT ROLE 'bookstore_readonly' TO 'readonly_user'@'localhost';
 
 -- (c) Book Manager User
-CREATE USER 'book_manager'@'localhost' IDENTIFIED BY 'Fiona your password';
+CREATE USER 'book_manager'@'localhost' IDENTIFIED BY 'Fionawan582';
 GRANT 'bookstore_book_manager' TO 'book_manager'@'localhost';
 SET DEFAULT ROLE 'bookstore_book_manager' TO 'book_manager'@'localhost';
 
 -- (d) Customer Manager User
-CREATE USER 'customer_manager'@'localhost' IDENTIFIED BY 'Fiona your password';
+CREATE USER 'customer_manager'@'localhost' IDENTIFIED BY 'Fionawan582';
 GRANT 'bookstore_customer_manager' TO 'customer_manager'@'localhost';
 SET DEFAULT ROLE 'bookstore_customer_manager' TO 'customer_manager'@'localhost';
 
