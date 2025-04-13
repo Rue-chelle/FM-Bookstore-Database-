@@ -1,6 +1,6 @@
 ## FM Bookstore Database README
 
-![Drawio Schema]()
+![Schema]()
 
 ## Overview
 
